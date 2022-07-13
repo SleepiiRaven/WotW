@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gaincurrency.wav-3d0228f30281098b284670274143a12b.sample"
+
+[deps]
+
+source_file="res://Sounds/gaincurrency.wav"
+dest_files=[ "res://.import/gaincurrency.wav-3d0228f30281098b284670274143a12b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

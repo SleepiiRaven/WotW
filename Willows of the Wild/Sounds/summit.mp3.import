@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/summit.mp3-f7b8ecf632225de97c5d24ad04da6b1c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/summit.mp3"
+dest_files=[ "res://.import/summit.mp3-f7b8ecf632225de97c5d24ad04da6b1c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

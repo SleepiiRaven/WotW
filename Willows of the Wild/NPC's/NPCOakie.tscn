@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://NPC's/char2.png" type="Texture" id=1]
+[ext_resource path="res://World/Shaders/shadow.png" type="Texture" id=2]
+[ext_resource path="res://NPC's/NPCOakie.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 3.0
+height = 4.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 23.0
+
+[node name="NPCOakie" type="StaticBody2D"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, 2 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="CheckPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPlayer"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="CheckPlayer" to="." method="_on_CheckPlayer_body_entered"]
+[connection signal="body_exited" from="CheckPlayer" to="." method="_on_CheckPlayer_body_exited"]

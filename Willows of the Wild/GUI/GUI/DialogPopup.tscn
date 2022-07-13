@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://GUI/GUI/DialogPopup.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GUI/GUI/dialogforeground.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=10]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect/Dialogue:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "ShowDialogue"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect/Dialogue:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="DialogPopup" type="Popup"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+popup_exclusive = true
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 30.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 165.0
+texture = ExtResource( 3 )
+
+[node name="NPCName" type="Label" parent="TextureRect"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 255.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="Dialogue" type="Label" parent="TextureRect"]
+margin_left = 5.0
+margin_top = 15.0
+margin_right = 265.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "hooiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiooooooooooooooooooiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+autowrap = true
+percent_visible = 0.0
+max_lines_visible = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 12 )
+anims/ShowDialogue = SubResource( 13 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
