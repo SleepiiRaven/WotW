@@ -82,6 +82,7 @@ custom_fonts/font = SubResource( 5 )
 text = "Quit"
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 position = Vector2( 260, 120 )
 scale = Vector2( 0.33975, 0.33975 )
 texture = ExtResource( 5 )
@@ -92,10 +93,12 @@ energy = 0.8
 position = Vector2( 259, 112 )
 scale = Vector2( 5.75, 5.75 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Light2D2" type="Light2D" parent="."]
+visible = false
 position = Vector2( 160, 41 )
 scale = Vector2( 0.571937, 0.157293 )
 texture = ExtResource( 5 )
