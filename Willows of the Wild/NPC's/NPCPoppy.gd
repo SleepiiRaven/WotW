@@ -70,6 +70,7 @@ func talk():
 					$Sprite.visible = true
 					get_tree().get_root().get_node("World/CanvasLayer/ItemBanana").visible = false
 					canvas.glue += 15
+					PlayerStats.glue += 15
 					canvas.get_node("Currency/AudioStreamPlayer").play()
 					dialoguePopup.close()
 					set_process_input(true)

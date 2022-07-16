@@ -107,6 +107,7 @@ func talk():
 						dialogue_state = 0
 						quest1_status = questStatus.COMPLETED
 						canvas.glue += 15
+						PlayerStats.glue += 15
 						canvas.get_node("Currency/AudioStreamPlayer").play()
 						dialoguePopup.close()
 						set_process_input(true)

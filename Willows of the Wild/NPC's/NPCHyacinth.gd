@@ -163,6 +163,7 @@ func talk():
 							dialogue_state = 0
 							dialoguePopup.close()
 							canvas.glue += 10
+							PlayerStats.glue += 10
 							canvas.get_node("Currency/AudioStreamPlayer").play()
 							canvas.get_node("ItemSlimeball").visible = false
 							quest2_status = questStatus.COMPLETED

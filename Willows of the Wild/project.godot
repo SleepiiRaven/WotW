@@ -14,6 +14,10 @@ config/name="Willows of the Wild"
 run/main_scene="res://GUI/TitleScreen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://Player/PlayerStats.tscn"
+
 [display]
 
 window/size/width=320
